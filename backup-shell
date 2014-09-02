@@ -1,0 +1,9 @@
+#!/bin/bash
+
+### backup-shell
+# Convenience script that copies a few shell config files into a folder here,
+# so that I can push them into the Git repository.
+
+cp -f ~/.zshrc shell-config-backups/.zshrc
+cp -f ~/.bashrc shell-config-backups/.bashrc
+cp -f ~/.bash_aliases shell-config-backups/.bash_aliases
