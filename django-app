@@ -1,0 +1,44 @@
+#!/bin/bash
+
+### django-app
+# Wraps `python manage.py startapp` and fiddles with its default content
+# to make it more appropriate for Incuna's workflow.
+### Usage:
+# django-app [app_name]
+
+if [[ $1 != "" ]]; then
+    # Create a new Django app.
+    echo "Creating Django app '$1'..."
+    echo "  - Initiating app"
+    python manage.py startapp $1
+
+    # Remove all the dummy files besides models.py (which you need).
+    echo "  - Cleaning up default dummy files"
+    rm ./$1/tests.py
+    rm ./$1/admin.py
+    rm ./$1/views.py
+
+    # Create a 'tests' directory.
+    echo "  - Adding $1/tests directory and empty model test file"
+    mkdir ./$1/tests
+    touch ./$1/tests/__init__.py
+
+    # Write an empty test_models.py with useful imports.
+    model_test_file="./$1/tests/test_models.py"
+    echo "from django.test import TestCase" > $model_test_file
+    echo "" >> $model_test_file
+    echo "from .. import models" >> $model_test_file
+    echo "" >> $model_test_file
+    echo "" >> $model_test_file
+    echo "# Create your model tests here." >> $model_test_file
+
+    # Setup is finished.
+    echo "  - Done."
+
+    # Be useful.
+    echo "Typical app configuration:"
+    echo "  - Add the app name to INSTALLED_APPS in settings.py"
+    echo "  - Add the app to the 'using' list in .coveragerc"
+else
+    echo "You must provide an app name."
+fi

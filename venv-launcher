@@ -1,0 +1,91 @@
+#!/bin/bash
+
+##### venv-launcher
+# Open a virtual environment and cd to the appropriate directory.
+# If the environment doesn't exist, create it; same with the directory.
+# Does magic like running .env/env.sh files if they exist.
+# Needs to be run with 'source', otherwise it doesn't work properly;
+# this means its variables have to be unset when it's done.
+
+##### Usage:
+#     source [path-to]/venv-launcher $name_of_project
+# Best used with the following in your ~/.bash_aliases file:
+#     alias venv="source [path-to]/venv-launcher"
+#     alias dv="deactivate; cd ~/[path-to-your-projects-directory]"
+
+source virtualenvwrapper.sh
+
+# If we're already in a virtual environment, deactivate.
+if [[ "$(type deactivate)" =~ "function" ]]; then
+	echo "Deactivating existing virtualenv..."
+	deactivate
+fi
+
+# Probably your home directory, unless your work and virtual environments live elsewhere.
+VENV_BASEDIR="/home/adam"
+# Where all your projects go.
+VENV_WORKDIR="$VENV_BASEDIR/Projects"
+
+VENVNAME="env-$1"
+
+
+# Allow the environment to be created using Python 3.
+VENV_PYTHONVER=`which python2`
+if [[ "$2" == "3" ]]; then
+	echo "Using Python 3."
+	VENV_PYTHONVER=`which python3`
+fi
+
+# Check if the environment exists, and create it if not.
+VENV_PROJECTDIR="$VENV_WORKDIR/$1/"
+temp_create="y"
+if [[ ! -d "$VENV_BASEDIR/Envs/$VENVNAME/" ]]; then
+	echo "The virtual environment $VENVNAME does not exist."
+	echo -n "Would you like to create it? (Y/n) "
+	read temp_create
+	if [[ $temp_create == "y" || $temp_create == "Y" ]]; then
+		# Create a project directory for the virtualenv.
+		if [[ ! -d $VENV_PROJECTDIR ]]; then
+			echo "Creating new dir $VENV_PROJECTDIR"
+			mkdir $VENV_PROJECTDIR
+		fi
+
+		# Create the environment with the appropriate directory and Python settings.
+		mkvirtualenv $VENVNAME -a $VENV_PROJECTDIR -p $VENV_PYTHONVER
+
+		# Optionally clone the Git repository into $VENV_PROJECTDIR (via SSH to Github).
+		cd "$VENV_WORKDIR/"
+		temp_clone="y"
+		echo "Would you like to clone the Git repository git@github.com:incuna/$1.git into $VENV_WORKDIR? (Y/n)"
+		read temp_clone
+		if [[ $temp_clone == "y" || $temp_clone == "Y" ]]; then
+			git clone "git@github.com:incuna/$1.git"
+		fi
+	fi
+fi
+
+# The virtualenv now (probably) exists, one way or another!
+# Activate and switch to the virtual environment.
+if [[ $temp_create == "y" || $temp_create == "Y" ]]; then
+	workon $VENVNAME
+	cd "$VENV_PROJECTDIR"
+
+	# Setup environment variables
+	if [[ -a ".env" ]]; then
+		source .env
+	fi
+	if [[ -a "env.sh" ]]; then
+		source env.sh
+	fi
+fi
+
+# Clean up variables that might be left in the environment (since this is run using source).
+unset VENV_BASEDIR
+unset VENV_WORKDIR
+unset VENV_PYTHONVER
+# unset VENV_PROJECTDIR
+# ^ this one's actually convenient for making your shell prompt concise;
+# go ahead and uncomment if you don't like it :)
+unset VENVNAME
+unset temp_create
+unset temp_clone

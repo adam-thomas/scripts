@@ -1,0 +1,43 @@
+#!/bin/bash
+source virtualenvwrapper.sh
+
+# Accept the envname to be deleted as a parameter.
+# Prepend "env-" if necessary.
+NAME_TO_DELETE = $1
+if [[ ${NAME_TO_DELETE:0:4} != "env-" ]]; then
+    NAME_TO_DELETE = "env-$NAME_TO_DELETE"
+fi
+
+# Confirm with the user.
+delete_venv = "n"
+echo -n "Would you like to delete the virtual environment $NAME_TO_DELETE? (y/N) "
+if [[ $delete_venv == "y" || $delete_venv == "Y" ]]; then
+
+    # If we're already in the named virtual environment, deactivate it first.
+    # Currently this bit only works if you activated the environment using
+    # venv-launcher, but hopefully there's a better way out there somewhere.
+    # TODO: attempt to find the latter.
+    if [[ "$(type deactivate)" =~ "function" ]]; then
+        # $VENVNAME is a variable left over from the venv-launcher script.
+        if [[ $VENVNAME == NAME_TO_DELETE ]]; then
+            echo "Deactivating existing virtualenv..."
+            deactivate
+        fi
+    fi
+
+    # Do the actual work.
+    echo "Removing virtual env $NAME_TO_DELETE..."
+    rmvirtualenv $NAME_TO_DELETE
+
+    # Offer to delete the corresponding directory from the Projects folder.
+    delete_dir = "n"
+    FOLDER_NAME = ${NAME_TO_DELETE:4:}
+    echo -n "Would you like to delete the folder ~/Projects/$FOLDER_NAME? (y/N) "
+    read delete_dir
+    if [[ $delete_dir == "y" || $delete_dir == "Y" ]]; then
+        rm -rf "/home/adam/Projects/$FOLDER_NAME"
+    fi
+
+fi
+
+unset NAME_TO_DELETE
