@@ -14,18 +14,19 @@ alias bsh=backup-shell
 # Git
 alias git=hub
 alias g=hub
-alias gs="git ss"
 alias ga="git add"
 alias gaa="git aa"
+alias gc="git co"
+alias gcb="git cob"
+alias gcb+="git co master; git pull; git cob"
+alias gcv="git commit -v"
 alias gm="git checkout master"
+alias gmp="git co master; git pull"
 alias gmg="git merge master"
 alias gp="git pull"
 alias gps="git push"
 alias gpr="git pr"
-alias gc="git co"
-alias gcb="git co master; git pull; git cob"
-alias gcb+="git cob"
-alias gcv="git commit -v"
+alias gs="git ss"
 
 # Heroku
 alias hr="heroku run"
@@ -39,6 +40,10 @@ alias venv="source venv-launcher"
 alias dv="deactivate; cd ~/Projects"
 alias rmvenv="source venv-delete"
 alias getenv="hoard get | sed 's/^/EXPORT /' > .env"
+alias ve="venv '${PWD##*/}'"
+
+# Django help
+alias mkuser="python manage.py shell < ~/scripts/make_superuser.py"
 
 # Python work
 alias py="python"
