@@ -37,13 +37,16 @@ alias hrsync="heroku run python manage.py syncdb"
 
 # Virtualenv help
 alias venv="source venv-launcher"
+alias ve="venv '${PWD##*/}'"
 alias dv="deactivate; cd ~/Projects"
 alias rmvenv="source venv-delete"
-alias getenv="hoard get | sed 's/^/EXPORT /' > .env"
-alias ve="venv '${PWD##*/}'"
 
 # Django help
 alias mkuser="python manage.py shell < ~/scripts/make_superuser.py"
+
+# Other project management
+alias getvars="hoard get | sed 's/^/EXPORT /' > .env"
+alias dg=dumping-ground
 
 # Python work
 alias py="python"

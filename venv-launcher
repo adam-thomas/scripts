@@ -48,6 +48,7 @@ if [[ ! -d "$VENV_BASEDIR/Envs/$VENVNAME/" ]]; then
 		if [[ ! -d $VENV_PROJECTDIR ]]; then
 			echo "Creating new dir $VENV_PROJECTDIR"
 			mkdir $VENV_PROJECTDIR
+			mkdir $VENV_WORKDIR/DumpingGround/$1/
 		fi
 
 		# Create the environment with the appropriate directory and Python settings.
