@@ -11,6 +11,7 @@ fi
 # Confirm with the user.
 delete_venv = "n"
 echo -n "Would you like to delete the virtual environment $NAME_TO_DELETE? (y/N) "
+read delete_venv
 if [[ $delete_venv == "y" || $delete_venv == "Y" ]]; then
 
     # If we're already in the named virtual environment, deactivate it first.
