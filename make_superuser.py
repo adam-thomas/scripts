@@ -3,7 +3,7 @@
 # Run with `python manage.py shell < make_superuser.py`
 
 from users.tests.factories import UserFactory
-a = UserFactory.create(name='adam', email='adam@incuna.com', is_staff=True, is_superuser=True)
-a.set_password('adam')
+a = UserFactory.create(name='admin', email='admin@incuna.com', is_staff=True, is_superuser=True)
+a.set_password('admin')
 a.save()
 exit()
