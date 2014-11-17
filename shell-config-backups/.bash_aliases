@@ -40,6 +40,7 @@ alias venv="source venv-launcher"
 alias ve="venv '${PWD##*/}'"
 alias dv="deactivate; cd ~/Projects"
 alias rmvenv="source venv-delete"
+alias sv="ve; pmserv+"
 
 # Django help
 alias mkuser="python manage.py shell < ~/scripts/make_superuser.py"
@@ -53,6 +54,7 @@ alias py="python"
 alias pm="python manage.py"
 alias pt="pm test"
 alias pms="pm shell"
+alias pms+="pm shell_plus"
 alias pmm="pm migrate"
 alias pmsm="pm schemamigration"
 alias pmdm="pm datamigration"
@@ -70,13 +72,18 @@ alias pipr="pip install -r"
 alias pipi="pip install"
 alias pipf="pip freeze"
 alias pdir="make-python-dir"
+# alias f8="python3 -m flake8 ."
+alias f8="flake8 ."
 
 # Makefiles
 alias m="make"
 alias mt="make test"
 alias md="make deploy"
+alias mt8="f8; mt"
 
 # Other usefuls
 alias minecraft="java -jar ~/Downloads/Minecraft.jar"
 alias ffs="sudo fc -s"  # doesn't work on zsh, need to find an equivalent...
 alias sb="subl ."
+alias ack="ack-grep"
+alias ackp="ack-grep --type=python"
