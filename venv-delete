@@ -3,13 +3,13 @@ source virtualenvwrapper.sh
 
 # Accept the envname to be deleted as a parameter.
 # Prepend "env-" if necessary.
-NAME_TO_DELETE = $1
+NAME_TO_DELETE=$1
 if [[ ${NAME_TO_DELETE:0:4} != "env-" ]]; then
-    NAME_TO_DELETE = "env-$NAME_TO_DELETE"
+    NAME_TO_DELETE="env-$NAME_TO_DELETE"
 fi
 
 # Confirm with the user.
-delete_venv = "n"
+delete_venv="n"
 echo -n "Would you like to delete the virtual environment $NAME_TO_DELETE? (y/N) "
 read delete_venv
 if [[ $delete_venv == "y" || $delete_venv == "Y" ]]; then
@@ -31,8 +31,8 @@ if [[ $delete_venv == "y" || $delete_venv == "Y" ]]; then
     rmvirtualenv $NAME_TO_DELETE
 
     # Offer to delete the corresponding directory from the Projects folder.
-    delete_dir = "n"
-    FOLDER_NAME = ${NAME_TO_DELETE:4:}
+    delete_dir="n"
+    FOLDER_NAME=${NAME_TO_DELETE:4:200}
     echo -n "Would you like to delete the folder ~/Projects/$FOLDER_NAME? (y/N) "
     read delete_dir
     if [[ $delete_dir == "y" || $delete_dir == "Y" ]]; then
