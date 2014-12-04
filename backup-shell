@@ -8,3 +8,4 @@ cp -f ~/.zshrc shell-config-backups/.zshrc
 cp -f ~/.bashrc shell-config-backups/.bashrc
 cp -f ~/.bash_aliases shell-config-backups/.bash_aliases
 cp -f ~/.oh-my-zsh/themes/agnoster.zsh-theme shell-config-backups/agnoster.zsh-theme
+cp -f ~/.gitconfig shell-config-backups/.gitconfig

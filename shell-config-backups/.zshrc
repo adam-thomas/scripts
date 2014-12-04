@@ -135,8 +135,12 @@ fi
 ############################################################################################################################################
 
 # Virtualenv things
-export WORKON_HOME=~/Envs
-source /usr/local/bin/virtualenvwrapper.sh
+export WORKON_HOME=$HOME/Envs
+export PROJECT_HOME=$HOME/Projects
+source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+
+# Hub
+export PATH=~/Applications/hub:$PATH
 
 # My scripts
 export PATH=~/scripts:$PATH
@@ -145,4 +149,4 @@ export PATH=~/scripts:$PATH
 export PATH="/usr/local/heroku/bin:$PATH"
 
 # rbenv
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
