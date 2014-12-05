@@ -10,3 +10,4 @@ cp -f ~/.bash_aliases ~/scripts/shell-config-backups/.bash_aliases
 cp -f ~/.oh-my-zsh/themes/agnoster.zsh-theme ~/scripts/shell-config-backups/agnoster.zsh-theme
 cp -f ~/.gitconfig ~/scripts/shell-config-backups/.gitconfig
 cp -f ~/.gitignore ~/scripts/shell-config-backups/.gitignore
+cp -f ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings ~/scripts/shell-config-backups/Preferences.sublime-settings
