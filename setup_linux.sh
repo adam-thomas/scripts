@@ -10,9 +10,10 @@ ubuntu-restricted-extras vlc ttf-mscorefonts-installer sqlite ruby \
 quicksynergy postgresql-server-dev-all ack-grep sparkleshare \
 memcached libmemcached-dev nautilus-open-terminal libxml2-dev libxslt-dev \
 tree python-pip virtualenv virtualenvwrapper rbenv postgresql-client \
-postgresql postgresql-contrib gnome-tweak-tool
+postgresql postgresql-contrib gnome-tweak-tool nodejs npm
 
 sudo pip install virtualenvwrapper
+sudo npm install -g bower grunt-cli
 
 # Install zsh
 sudo wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
