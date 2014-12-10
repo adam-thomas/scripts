@@ -19,10 +19,13 @@ sudo npm install -g bower grunt-cli
 sudo wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
 sudo chsh -s /bin/zsh
 
-# Download hub and unzip it in the right place
-wget https://github.com/github/hub/releases/download/v2.2.0-preview1/hub_2.2.0-preview1_darwin_amd64.gz.tar hub.gz.tar
-mkdir ~/Applications
-unzip hub.gz.tar ~/Applications/hub
+# Install hub
+cd
+mkdir Applications
+git clone https://github.com/github/hub.git
+cd hub
+git checkout 1.12-stable
+sudo gem install hub
 
 # Download Sublime Text 3
 # (latest version at time of writing)
@@ -41,6 +44,13 @@ cp .bash_aliases .zshrc ~
 cp -f agnoster.zsh-theme ~/.oh-my-zsh/themes/agnoster.zsh-theme
 
 # Restart the shell
+zsh
+
+# Download git completion scripts and put them in the right place
+wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash ~ZSH/custom/git-completion.bash
+wget https://github.com/git/git/raw/master/contrib/completion/git-completion.zsh ~ZSH/custom/git-completion.zsh
+
+# Restart the shell again
 zsh
 
 # Other things to do

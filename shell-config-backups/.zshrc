@@ -51,7 +51,7 @@ ZSH_CUSTOM=$ZSH/custom
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git gitfast virtualenvwrapper)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -96,7 +96,7 @@ DEFAULT_USER="adam"
 VIRTUAL_ENV_DISABLE_PROMPT=1
 
 # speed up git file completion
-__git_files () { 
+__git_files () {
     _wanted files expl 'local files' _files  }
 
 
@@ -137,10 +137,7 @@ fi
 # Virtualenv things
 export WORKON_HOME=$HOME/Envs
 export PROJECT_HOME=$HOME/Projects
-source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
-
-# Hub
-export PATH=~/Applications/hub:$PATH
+source /usr/local/bin/virtualenvwrapper.sh
 
 # My scripts
 export PATH=~/scripts:$PATH
