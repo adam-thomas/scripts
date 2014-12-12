@@ -30,12 +30,13 @@
 
     "folder_exclude_patterns": [
         ".svn", ".git", ".hg", "CVS", "__pycache__",
+        "static/lib", "node_modules", "tiny_mce",
     ],
     "file_exclude_patterns": [
         "*.pyc", "*.pyo", "*.exe", "*.dll", "*.obj", "*.o", "*.a",
         "*.lib", "*.so", "*.dylib", "*.ncb", "*.sdf", "*.suo", "*.pdb", "*.idb",
         ".DS_Store", "*.class", "*.psd", "*.db", "*.sublime-workspace",
-        ".coverage",
+        ".coverage", "jquery.*"
     ],
 
 }
