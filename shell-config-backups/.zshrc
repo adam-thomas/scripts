@@ -146,4 +146,4 @@ export PATH=~/scripts:$PATH
 export PATH="/usr/local/heroku/bin:$PATH"
 
 # rbenv
-# eval "$(rbenv init -)"
+eval "$(rbenv init -)"
