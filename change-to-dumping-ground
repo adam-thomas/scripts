@@ -1,0 +1,22 @@
+#!/bin/bash
+
+### change-to-dumping-ground
+# Switches to the ~/Projects/DumpingGround folder in the terminal.
+# If the current directory matches up to one in DumpingGround, open that
+# subdirectory instead.
+# Must be run with `source`.
+
+CURRENT_DIR=${PWD##*/}
+DG_PATH="/home/adam/Projects/DumpingGround/"
+DG_PROJECT_DIR=$DG_PATH$CURRENT_DIR
+
+if [ -d "$DG_PROJECT_DIR" ]; then
+    cd $DG_PROJECT_DIR
+else
+    cd $DG_PATH
+fi
+
+# Clean up variables from the environment.
+unset CURRENT_DIR
+unset DG_PATH
+unset DG_PROJECT_DIR

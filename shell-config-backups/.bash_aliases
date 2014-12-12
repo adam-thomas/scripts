@@ -7,8 +7,11 @@ alias esh="subl ~/.zshrc"
 alias ezsh="subl ~/.zshrc"
 alias ebash="subl ~/.bashrc"
 alias ealias="subl ~/.bash_aliases"
+alias csc="cd ~/scripts"
 alias scrpt="subl ~/scripts; ealias"
 alias s=scrpt
+alias scrpt+="scrpt; csc"
+alias s+="scrpt; csc"
 alias bsh=backup-shell
 
 # Git
@@ -48,6 +51,7 @@ alias mkuser="python manage.py shell < ~/scripts/make_superuser.py"
 # Other project management
 alias getvars="hoard get | sed 's/^/EXPORT /' > .env"
 alias dg=dumping-ground
+alias cdg="source change-to-dumping-ground"
 
 # Python work
 alias py="python"
