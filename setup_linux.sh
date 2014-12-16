@@ -27,6 +27,10 @@ cd hub
 git checkout 1.12-stable
 sudo gem install hub
 
+# Make zsh and hub play nice together
+mkdir -p ~/.oh-my-zsh/plugins/hub
+curl https://raw.githubusercontent.com/github/hub/master/etc/hub.zsh_completion > ~/.oh-my-zsh/plugins/hub/_hub
+
 # Set up Ruby and Compass
 rbenv install 2.1.1
 rbenv global 2.1.1
