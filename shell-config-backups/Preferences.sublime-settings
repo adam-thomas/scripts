@@ -1,42 +1,57 @@
-// Settings in here override those in "Default/Preferences.sublime-settings",
-// and are overridden in turn by file type specific settings.
 {
-	// Columns in which to display vertical rulers
-    "rulers": [90],
-
-    // Set to true to insert spaces when tab is pressed
-    "translate_tabs_to_spaces": true,
-
-    // Controls how the indent guides are drawn, valid options are
-    // "draw_normal" and "draw_active". draw_active will draw the indent
-    // guides containing the caret in a different color.
-    "indent_guide_options": ["draw_normal"],
-
-    // Set to true to removing trailing white space on save
-    "trim_trailing_white_space_on_save": true,
-
-    // Makes tabs with modified files more visible
-    "highlight_modified_tabs": true,
-
-    "show_tab_close_buttons": false,
-
-    // Show folders in the side bar in bold
-    "bold_folder_labels": true,
-
-    // Set to true to close windows as soon as the last file is closed, unless
-    // there's a folder open within the window. This is always enabled on OS X,
-    // changing it here won't modify the behavior.
-    "close_windows_when_empty": true,
-
-    "folder_exclude_patterns": [
-        ".svn", ".git", ".hg", "CVS", "__pycache__",
-        "static/lib", "node_modules", "tiny_mce",
-    ],
-    "file_exclude_patterns": [
-        "*.pyc", "*.pyo", "*.exe", "*.dll", "*.obj", "*.o", "*.a",
-        "*.lib", "*.so", "*.dylib", "*.ncb", "*.sdf", "*.suo", "*.pdb", "*.idb",
-        ".DS_Store", "*.class", "*.psd", "*.db", "*.sublime-workspace",
-        ".coverage", "jquery.*"
-    ],
-
+	"bold_folder_labels": true,
+	"close_windows_when_empty": true,
+	"color_scheme": "Packages/Color Scheme - Default/Monokai Bright.tmTheme",
+	"file_exclude_patterns":
+	[
+		"*.pyc",
+		"*.pyo",
+		"*.exe",
+		"*.dll",
+		"*.obj",
+		"*.o",
+		"*.a",
+		"*.lib",
+		"*.so",
+		"*.dylib",
+		"*.ncb",
+		"*.sdf",
+		"*.suo",
+		"*.pdb",
+		"*.idb",
+		".DS_Store",
+		"*.class",
+		"*.psd",
+		"*.db",
+		"*.sublime-workspace",
+		".coverage",
+		"jquery.*"
+	],
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		"__pycache__",
+		"static/lib",
+		"node_modules",
+		"tiny_mce"
+	],
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"indent_guide_options":
+	[
+		"draw_normal"
+	],
+	"rulers":
+	[
+		90
+	],
+	"show_tab_close_buttons": false,
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true
 }

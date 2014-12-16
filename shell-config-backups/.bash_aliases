@@ -91,3 +91,4 @@ alias ffs="sudo fc -s"  # doesn't work on zsh, need to find an equivalent...
 alias sb="subl ."
 alias ack="ack-grep"
 alias ackp="ack-grep --type=python"
+alias nt="nautilus ."
