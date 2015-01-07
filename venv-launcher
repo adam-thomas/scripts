@@ -28,14 +28,6 @@ VENV_WORKDIR="$VENV_BASEDIR/Projects"
 
 VENVNAME="env-$1"
 
-
-# Allow the environment to be created using Python 3.
-VENV_PYTHONVER=`which python2`
-if [[ "$2" == "3" ]]; then
-	echo "Using Python 3."
-	VENV_PYTHONVER=`which python3`
-fi
-
 # Check if the environment exists, and create it if not.
 VENV_PROJECTDIR="$VENV_WORKDIR/$1/"
 temp_create="y"
@@ -49,6 +41,17 @@ if [[ ! -d "$VENV_BASEDIR/Envs/$VENVNAME/" ]]; then
 			echo "Creating new dir $VENV_PROJECTDIR"
 			mkdir $VENV_PROJECTDIR
 			mkdir $VENV_WORKDIR/DumpingGround/$1/
+		fi
+
+		temp_python="y"
+		echo "Would you like to use Python 3? (Y/n) "
+		read temp_python
+		VENV_PYTHONVER=`which python3`
+		if [[ $temp_python == "n" || $temp_python == "N" ]]; then
+			echo "Using Python 2."
+			VENV_PYTHONVER=`which python2`
+		else
+			echo "Using Python 3."
 		fi
 
 		# Create the environment with the appropriate directory and Python settings.

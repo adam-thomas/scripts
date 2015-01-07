@@ -15,16 +15,10 @@ echo -n "Would you like to delete the virtual environment $NAME_TO_DELETE? (y/N)
 read delete_venv
 if [[ $delete_venv == "y" || $delete_venv == "Y" ]]; then
 
-    # If we're already in the named virtual environment, deactivate it first.
-    # Currently this bit only works if you activated the environment using
-    # venv-launcher, but hopefully there's a better way out there somewhere.
-    # TODO: attempt to find the latter.
+    # If we're already in a virtual environment, deactivate it first.
     if [[ "$(type deactivate)" =~ "function" ]]; then
-        # $VENVNAME is a variable left over from the venv-launcher script.
-        if [[ $VENVNAME == NAME_TO_DELETE ]]; then
-            echo "Deactivating existing virtualenv..."
-            deactivate
-        fi
+        echo "Deactivating existing virtualenv..."
+        deactivate
     fi
 
     # Do the actual work.
