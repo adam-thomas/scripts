@@ -39,6 +39,9 @@ gem update --system
 gem install compass
 rbenv rehash
 
+# Install Heroku Toolbelt
+wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+
 # Download Sublime Text 3
 # (latest version at time of writing)
 wget http://c758482.r82.cf2.rackcdn.com/sublime-text_build-3065_amd64.deb
@@ -72,4 +75,6 @@ echo "  Change terminal font to Meslo Powerline so that agnoster renders properl
 echo "  Setup Charlie's PSQL hack at http://meshy.co.uk/posts/postgresql-without-passwords/"
 echo "  Add SublimeText licence"
 echo "  Install and configure GNOME taskbar extension (use Firefox, Chrome doesn't like the installer)"
+echo "  Hoard"
+echo "  Get ~/.pypirc config file from the internal wiki"
 echo "  Reboot at least once"
