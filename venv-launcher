@@ -15,12 +15,6 @@
 
 source virtualenvwrapper.sh
 
-# If we're already in a virtual environment, deactivate.
-if [[ "$(type deactivate)" =~ "function" ]]; then
-	echo "Deactivating existing virtualenv..."
-	deactivate
-fi
-
 # Probably your home directory, unless your work and virtual environments live elsewhere.
 VENV_BASEDIR="/home/adam"
 # Where all your projects go.
@@ -71,6 +65,13 @@ fi
 # The virtualenv now (probably) exists, one way or another!
 # Activate and switch to the virtual environment.
 if [[ $temp_create == "y" || $temp_create == "Y" ]]; then
+
+	# If we're already in a virtual environment, deactivate.
+	if [[ "$(type deactivate)" =~ "function" ]]; then
+		echo "Deactivating existing virtualenv..."
+		deactivate
+	fi
+
 	workon $VENVNAME
 	cd "$VENV_PROJECTDIR"
 
