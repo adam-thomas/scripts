@@ -87,7 +87,7 @@ alias mt8="f8; mt"
 
 # Other usefuls
 alias minecraft="java -jar ~/Downloads/Minecraft.jar"
-alias ffs="sudo fc -s"  # doesn't work on zsh, need to find an equivalent...
+alias ffs="sudo $(fc -ln -1)"
 alias sb="subl ."
 alias ack="ack-grep"
 alias ackp="ack-grep --type=python"
