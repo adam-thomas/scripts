@@ -29,6 +29,7 @@ alias gmg="git merge master"
 alias gp="git pull"
 alias gps="git push"
 alias gpr="git pr"
+alias gr="git reset HEAD"
 alias gs="git ss"
 
 # Heroku
@@ -92,3 +93,5 @@ alias sb="subl ."
 alias ack="ack-grep"
 alias ackp="ack-grep --type=python"
 alias nt="nautilus ."
+alias dropbox="~/.dropbox-dist/dropboxd"
+alias dbx="dropbox"
