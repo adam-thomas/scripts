@@ -14,10 +14,11 @@ ubuntu-restricted-extras vlc ttf-mscorefonts-installer sqlite ruby \
 quicksynergy postgresql-server-dev-all ack-grep sparkleshare \
 memcached libmemcached-dev nautilus-open-terminal libxml2-dev libxslt-dev \
 tree python-pip postgresql-client postgresql postgresql-contrib \
-gnome-tweak-tool nodejs npm ruby ruby-build
+gnome-tweak-tool nodejs npm autoconf bison rbenv
 
 sudo pip install virtualenv virtualenvwrapper
 sudo npm install -g bower grunt-cli
+git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 
 # Install zsh
 sudo apt-get install zsh
@@ -40,8 +41,8 @@ mkdir -p ~/.oh-my-zsh/plugins/hub
 curl https://raw.githubusercontent.com/github/hub/master/etc/hub.zsh_completion > ~/.oh-my-zsh/plugins/hub/_hub
 
 # Set up Ruby and Compass
-rbenv install 2.1.1
-rbenv global 2.1.1
+rbenv install 2.1.2
+rbenv global 2.1.2
 eval "$(rbenv init -)"
 gem update --system
 sudo gem install compass
