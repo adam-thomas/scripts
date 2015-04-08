@@ -1,10 +1,15 @@
 # Install brew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+brew update
+brew upgrade
+
 # Install packages of all kinds
-brew install Caskroom/cask/java ack gist git git-extras hub libmemcached nmap solr watch \
-wget python python3 zsh Caskroom/cask/vlc sparkleshare libxml2-dev libxslt-dev \
+brew install Caskroom/cask/java ack ag gist git git-extras hub libmemcached nmap solr \
+watch wget python python3 zsh Caskroom/cask/vlc sparkleshare libxml2-dev libxslt-dev \
 tree Caskroom/cask/xquartz nodejs npm autoconf bison ruby rbenv fontforge
+
+brew cask install google-chrome lastpass postgres python3 sublime-text-3 steam vlc iterm2
 
 # Python asked for this when I installed it... *shrug*
 mkdir -p $HOME/Library/Python/2.7/lib/python/site-packages
