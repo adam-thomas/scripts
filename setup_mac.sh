@@ -7,7 +7,7 @@ brew upgrade
 # Install packages of all kinds
 brew install Caskroom/cask/java ack ag gist git git-extras hub libmemcached nmap solr \
 watch wget python python3 zsh Caskroom/cask/vlc sparkleshare libxml2-dev libxslt-dev \
-tree Caskroom/cask/xquartz nodejs npm autoconf bison ruby rbenv fontforge
+tree Caskroom/cask/xquartz nodejs npm autoconf bison ruby rbenv
 
 brew cask install google-chrome lastpass postgres python3 sublime-text-3 steam vlc iterm2
 
@@ -41,6 +41,17 @@ sudo gem install hub
 # Make zsh and hub play nice together
 mkdir -p ~/.oh-my-zsh/plugins/hub
 curl https://raw.githubusercontent.com/github/hub/master/etc/hub.zsh_completion > ~/.oh-my-zsh/plugins/hub/_hub
+
+# Install fontforge properly (it's broken on Mac)
+# Thanks to Graham! https://github.com/grahamgilchrist/macos-compiled-fontforge/blob/master/README.md
+cd
+git clone https://github.com/grahamgilchrist/macos-compiled-fontforge.git macos-compiled-fontforge
+brew install fontforge ttfautohint
+rm -rf /usr/local/Cellar/fontforge /usr/local/Cellar/ttfautohint
+mv macos-compiled-fontforge/fontforge /usr/local/Cellar/fontforge
+mv macos-compiled-fontforge/ttfautohint /usr/local/Cellar/ttfautohint
+brew link ttfautohint fontforge
+rm -rf macos-compiled-fontforge
 
 # Set up Ruby and Compass and other frontend stuff
 sudo npm install -g bower grunt-cli
