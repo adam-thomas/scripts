@@ -88,6 +88,9 @@ alias mt="make test"
 alias md="make deploy"
 alias mt8="f8; mt"
 
+# Imperial Painter
+alias restore-paint="cp -rf ~/dropbox/Game\ Design/Tabletop\ Street\ Fighter/Imperial\ Painter\ files/* ~/Projects/imperial-painter"
+
 # Other usefuls
 alias minecraft="java -jar ~/Downloads/Minecraft.jar"
 # alias ffs="sudo $(fc -ln -1)"  # apparently this doesn't work either...
@@ -95,5 +98,5 @@ alias sb="subl ."
 alias ack="ack-grep"
 alias ackp="ack-grep --type=python"
 alias nt="nautilus ."
-alias dropbox="~/.dropbox-dist/dropboxd"
-alias dbx="dropbox"
+alias mount-dropbox="sudo mount -t vboxsf -o uid=1000,gid=1000 Dropbox ~/dropbox"
+alias mntdbx=mount-dropbox
