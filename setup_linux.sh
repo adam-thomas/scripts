@@ -25,17 +25,6 @@ sudo apt-get install zsh
 sudo wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
 chsh -s /bin/zsh
 
-# Launch ZSH
-zsh
-
-# Install hub
-cd
-mkdir Applications
-git clone https://github.com/github/hub.git
-cd hub
-git checkout 1.12-stable
-sudo gem install hub
-
 # Make zsh and hub play nice together
 mkdir -p ~/.oh-my-zsh/plugins/hub
 curl https://raw.githubusercontent.com/github/hub/master/etc/hub.zsh_completion > ~/.oh-my-zsh/plugins/hub/_hub
@@ -61,9 +50,7 @@ wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 wget http://c758482.r82.cf2.rackcdn.com/sublime-text_build-3083_amd64.deb
 
 # Install Powerline fonts
-cd
-git clone https://github.com/Lokaltog/powerline-fonts.git
-sudo sh powerline-fonts/install.sh
+pip install --user powerline-status
 
 # Download git completion scripts and put them in the right place
 wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash ~ZSH/custom/_git/git-completion.bash
@@ -75,23 +62,22 @@ git clone https://github.com/adam-incuna/scripts.git
 cd scripts/shell-config-backups
 cp .bash_aliases .zshrc .gitconfig .gitignore ~
 cp -f agnoster.zsh-theme ~/.oh-my-zsh/themes/agnoster.zsh-theme
-cp -f Preferences.sublime-settings ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
 
 # Make a work directory
 mkdir ~/Projects
 
-# Restart the shell again
+# Restart the shell
 zsh
 
 # Other things to do
 echo "Other things to set up:"
 echo "  Chrome"
-echo "  LastPass, AdBlock and GitHub Notifier extensions"
+echo "  Hub at https://github.com/github/hub/releases"
+echo "  Meldium, AdBlock and GitHub Notifier extensions"
 echo "  Register an SSH key for GitHub at https://github.com/settings/ssh (instructions at https://help.github.com/articles/generating-ssh-keys/)"
 echo "  Change terminal font to Meslo Powerline so that agnoster renders properly"
 echo "  Setup Charlie's PSQL hack at http://meshy.co.uk/posts/postgresql-without-passwords/"
 echo "  Add SublimeText licence and extensions"
-echo "  Install and configure GNOME taskbar extension (use Firefox, Chrome doesn't like the installer)"
-echo "  Hoard"
+echo "  PyCharm"
 echo "  Get ~/.pypirc config file from the internal wiki"
 echo "  Reboot at least once"
