@@ -89,7 +89,7 @@ autoload -U compinit
 compinit
 
 # zsh default user - hide the name display at the prompt
-DEFAULT_USER="adam"
+DEFAULT_USER="athomas"
 
 # hide the virtualenv name display
 VIRTUAL_ENV_DISABLE_PROMPT=1
