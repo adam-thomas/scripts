@@ -16,7 +16,7 @@
 source virtualenvwrapper.sh
 
 # Probably your home directory, unless your work and virtual environments live elsewhere.
-VENV_BASEDIR="/home/adam"
+VENV_BASEDIR="$HOME"
 # Where all your projects go.
 VENV_WORKDIR="$VENV_BASEDIR/Projects"
 
