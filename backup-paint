@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BACKUP_DIR="$HOME/dropbox/Game Design/Tabletop Street Fighter/Imperial Painter files"
+BACKUP_DIR="$HOME/dropbox/Game Design/Fists of Anarchy/Imperial Painter files"
 PAINTER_ROOT="$HOME/Projects/imperial-painter"
 
 cp -f $PAINTER_ROOT/*.xlsx "$BACKUP_DIR"
