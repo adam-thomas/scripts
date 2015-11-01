@@ -41,9 +41,6 @@ gem install sass
 gem install bundler
 rbenv rehash
 
-# Install Heroku Toolbelt
-wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
-
 # Download Sublime Text 3
 # (latest version at time of writing)
 # (needs actual installation)
