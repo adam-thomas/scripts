@@ -21,7 +21,7 @@ alias ga="g add"
 alias gaa="g aa"
 alias gc="g co"
 alias gcb="g cob"
-alias gcb+="g co master; g pull; g cob"
+alias gcb+="g stash && g co master && g pull && g cob && g stash pop"
 alias gcvf="g commit -v"
 alias gcv="f8 && g commit -v"
 alias gca="f8 && g commit -av"
@@ -45,9 +45,9 @@ alias hrsync="heroku run python manage.py syncdb"
 # Virtualenv help
 alias venv="source venv-launcher"
 alias ve="venv '${PWD##*/}'"
-alias dv="deactivate; cd ~/Projects"
+alias dv="deactivate && cd ~/Projects"
 alias rmvenv="source venv-delete"
-alias sv="ve; pmserv+"
+alias sv="ve && pmserv+"
 
 # Django help
 alias mkuser="python manage.py shell < ~/scripts/make_superuser.py"
@@ -83,7 +83,6 @@ alias pipi="pip install"
 alias pipf="pip freeze"
 alias pipu="pip uninstall"
 alias pdir="make-python-dir"
-# alias f8="python3 -m flake8 ."
 alias f8="flake8 ."
 
 # Makefiles
@@ -91,9 +90,6 @@ alias m="make"
 alias mt="make test"
 alias md="make deploy"
 alias mt8="f8; mt"
-
-# Imperial Painter
-alias restore-paint="cp -rf ~/dropbox/Game\ Design/Tabletop\ Street\ Fighter/Imperial\ Painter\ files/* ~/Projects/imperial-painter"
 
 # Other usefuls
 alias minecraft="java -jar ~/Downloads/Minecraft.jar"

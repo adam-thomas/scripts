@@ -4,8 +4,12 @@ __pycache__
 .tmp
 .sass-cache
 .env
+*.env
+env.sh
 .coverage.*
 *.egg-info
 build/
 dist/
 .idea/
+.bundle/
+*ght.sql
