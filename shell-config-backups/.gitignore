@@ -13,3 +13,4 @@ dist/
 .idea/
 .bundle/
 *ght.sql
+static_media/

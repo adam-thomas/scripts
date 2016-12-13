@@ -14,6 +14,14 @@ alias scrpt+="scrpt; csc"
 alias s+="scrpt; csc"
 alias bsh=backup-shell
 
+create_branch() {
+    git stash;
+    git checkout master;
+    git pull;
+    git checkout -b $1;
+    git stash pop;
+}
+
 # Git
 alias git=hub
 alias g=hub
@@ -21,7 +29,7 @@ alias ga="g add"
 alias gaa="g aa"
 alias gc="g co"
 alias gcb="g cob"
-alias gcb+="g stash && g co master && g pull && g cob && g stash pop"
+alias gcb+=create_branch
 alias gcvf="g commit -v"
 alias gcv="f8 && g commit -v"
 alias gca="f8 && g commit -av"
@@ -34,6 +42,8 @@ alias gpr="g pull-request"
 alias gr="g reset"
 alias grh="g reset HEAD"
 alias gs="g ss"
+alias gsp="g stash pop"
+alias gst="g stash"
 
 # Heroku
 alias hr="heroku run"
@@ -71,8 +81,8 @@ alias pmsync="pm syncdb"
 alias pmsync+="pmsync --all"
 alias pmserv="pm runserver"
 alias pmserv+="pm runserver_plus"
-alias pmsv+="pm runserver_plus"
-alias pmsv="export DEBUG=1; pm runserver_plus"
+alias pmsv="DEBUG=1 pm runserver_plus"
+alias pmsv-="pm runserver"
 alias pmreset="pm reset_db"
 alias pmuser="pm createsuperuser"
 alias pmload="pm loaddata"
@@ -89,11 +99,11 @@ alias f8="flake8 ."
 alias m="make"
 alias mt="make test"
 alias md="make deploy"
-alias mt8="f8; mt"
+alias mr="make runserver"
+alias mm="make migrate"
+alias mkm="make migrations"
 
 # Other usefuls
-alias minecraft="java -jar ~/Downloads/Minecraft.jar"
-# alias ffs="sudo $(fc -ln -1)"  # apparently this doesn't work either...
 alias sb="subl ."
 alias ack="ack-grep"
 alias ackp="ack-grep --type=python"
