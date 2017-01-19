@@ -95,6 +95,14 @@ alias pipu="pip uninstall"
 alias pdir="make-python-dir"
 alias f8="flake8 ."
 
+# Installed stuff
+find_installed() {
+    echo -n "Searching pip: "
+    echo $(pip freeze 2>/dev/null | grep $1)
+    echo -n "Searching npm: "
+    echo $(npm list --depth=0 2>/dev/null | grep $1)
+}
+
 # Database shortcuts
 refresh_db() {
     psql -c "drop database $1;" && psql -c "create database $1;"
