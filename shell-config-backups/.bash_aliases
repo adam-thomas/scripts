@@ -95,6 +95,11 @@ alias pipu="pip uninstall"
 alias pdir="make-python-dir"
 alias f8="flake8 ."
 
+# Database shortcuts
+refresh_db() {
+    psql -c "drop database $1;" && psql -c "create database $1;"
+}
+
 # Makefiles
 alias m="make"
 alias mt="make test"
