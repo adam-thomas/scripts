@@ -1,0 +1,10 @@
+#!/bin/bash
+# Script to clean up unused kernels from /boot.
+# Taken from http://askubuntu.com/a/90219.
+# Needs to be run with sudo.
+
+echo -n "This will clean all unused headers from /boot.  Are you sure? (y/N)"
+read confirm
+if [[ $confirm == "y" || $confirm == "Y" ]]; then
+    dpkg -l linux-{image,headers}-"[0-9]*" | awk '/^ii/{ print $2}' | grep -v -e `uname -r | cut -f1,2 -d"-"` | grep -e '[0-9]' | xargs sudo apt-get -y purge
+fi
