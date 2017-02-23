@@ -9,7 +9,7 @@ sudo apt-get upgrade
 
 # Install packages
 sudo apt-get install git tig python-dev python3-dev build-essential \
-libjpeg-dev libpng12-dev zsh gparted gimp \
+libjpeg-dev libpng12-dev gparted gimp \
 ubuntu-restricted-extras vlc ttf-mscorefonts-installer sqlite \
 quicksynergy postgresql-server-dev-all ack-grep sparkleshare \
 memcached libmemcached-dev nautilus-open-terminal libxml2-dev libxslt-dev \
@@ -32,18 +32,6 @@ chsh -s /bin/zsh
 # Make zsh and hub play nice together
 mkdir -p ~/.oh-my-zsh/plugins/hub
 curl https://raw.githubusercontent.com/github/hub/master/etc/hub.zsh_completion > ~/.oh-my-zsh/plugins/hub/_hub
-
-# Set up Ruby and Compass and other frontend stuff
-rbenv install 2.1.2
-rbenv global 2.1.2
-git clone git://github.com/jf/rbenv-gemset.git $HOME/.rbenv/plugins/rbenv-gemset
-git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash
-sudo REALLY_GEM_UPDATE_SYSTEM=1 gem update --system
-eval "$(rbenv init -)"
-gem install compass
-gem install sass
-gem install bundler
-rbenv rehash
 
 # Download Sublime Text 3
 # (latest version at time of writing)
