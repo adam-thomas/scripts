@@ -23,7 +23,7 @@ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 sudo pip install virtualenv virtualenvwrapper
-sudo npm install -g grunt-cli
+sudo npm install -g bower grunt-cli
 
 # Install zsh
 sudo apt-get install zsh
