@@ -19,8 +19,8 @@ libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev \
 libwebp-dev tcl8.6-dev tk8.6-dev python-tk
 
 # Install Node
-curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
-sudo apt-get install -y nodejs npm
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+sudo apt-get install -y nodejs
 
 sudo pip install virtualenv virtualenvwrapper
 sudo npm install -g bower grunt-cli
