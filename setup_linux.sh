@@ -22,7 +22,6 @@ sudo apt-get install -y nodejs npm
 
 sudo pip install virtualenv virtualenvwrapper
 sudo npm install -g bower grunt-cli
-git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 
 # Install zsh
 sudo apt-get install zsh
