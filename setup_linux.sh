@@ -14,7 +14,9 @@ ubuntu-restricted-extras vlc ttf-mscorefonts-installer sqlite \
 quicksynergy postgresql-server-dev-all ack-grep sparkleshare \
 memcached libmemcached-dev nautilus-open-terminal libxml2-dev libxslt-dev \
 tree python-pip postgresql-client postgresql postgresql-contrib \
-autoconf bison ruby ruby-dev rbenv fontforge
+autoconf bison ruby ruby-dev rbenv fontforge \
+libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev \
+libwebp-dev tcl8.6-dev tk8.6-dev python-tk
 
 # Install Node
 curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
