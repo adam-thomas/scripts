@@ -9,7 +9,7 @@ sudo apt-get upgrade
 
 # Install packages
 sudo apt-get install git tig python-dev python3-dev build-essential \
-libjpeg-dev libpng12-dev gparted gimp \
+libjpeg-dev libpng12-dev gparted gimp libpython-dev libpython3-dev \
 ubuntu-restricted-extras vlc ttf-mscorefonts-installer sqlite \
 quicksynergy postgresql-server-dev-all ack-grep sparkleshare \
 memcached libmemcached-dev nautilus-open-terminal libxml2-dev libxslt-dev \
