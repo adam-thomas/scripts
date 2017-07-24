@@ -8,13 +8,13 @@ sudo apt-get update
 sudo apt-get upgrade
 
 # Install packages
-sudo apt-get install git tig python-dev python3-dev build-essential \
+sudo apt-get -y install git tig python-dev python3-dev build-essential \
 libjpeg-dev libpng12-dev gparted gimp libpython-dev libpython3-dev \
 ubuntu-restricted-extras vlc ttf-mscorefonts-installer sqlite \
 quicksynergy postgresql-server-dev-all ack-grep sparkleshare \
 memcached libmemcached-dev nautilus-open-terminal libxml2-dev libxslt-dev \
 tree python-pip postgresql-client postgresql postgresql-contrib \
-autoconf bison ruby ruby-dev rbenv fontforge \
+autoconf bison python-pip \
 libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev \
 libwebp-dev tcl8.6-dev tk8.6-dev python-tk
 
@@ -26,7 +26,7 @@ sudo pip install virtualenv virtualenvwrapper
 sudo npm install -g bower grunt-cli
 
 # Install zsh
-sudo apt-get install zsh
+sudo apt-get -y install zsh
 sudo wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
 chsh -s /bin/zsh
 
