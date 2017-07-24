@@ -43,8 +43,9 @@ wget http://c758482.r82.cf2.rackcdn.com/sublime-text_build-3083_amd64.deb
 pip install --user powerline-status
 
 # Download git completion scripts and put them in the right place
-wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash ~ZSH/custom/_git/git-completion.bash
-wget https://github.com/git/git/raw/master/contrib/completion/git-completion.zsh ~ZSH/custom/_git/git-completion.zsh
+mkdir ~/.oh-my-zsh/custom/_git
+wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash ~/.oh-my-zsh/custom/_git/git-completion.bash
+wget https://github.com/git/git/raw/master/contrib/completion/git-completion.zsh ~/.oh-my-zsh/custom/_git/git-completion.zsh
 
 # Get scripts directory and wire things up
 cd
