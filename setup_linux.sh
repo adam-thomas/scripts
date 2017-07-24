@@ -34,13 +34,12 @@ chsh -s /bin/zsh
 mkdir -p ~/.oh-my-zsh/plugins/hub
 curl https://raw.githubusercontent.com/github/hub/master/etc/hub.zsh_completion > ~/.oh-my-zsh/plugins/hub/_hub
 
-# Download Sublime Text 3
-# (latest version at time of writing)
-# (needs actual installation)
-wget http://c758482.r82.cf2.rackcdn.com/sublime-text_build-3083_amd64.deb
-
 # Install Powerline fonts
-pip install --user powerline-status
+git clone https://github.com/powerline/fonts.git ./powerline-fonts
+cd powerline-fonts
+./install.sh
+cd ..
+rm -rf powerline-fonts
 
 # Download git completion scripts and put them in the right place
 mkdir ~/.oh-my-zsh/custom/_git
@@ -49,7 +48,7 @@ wget https://github.com/git/git/raw/master/contrib/completion/git-completion.zsh
 
 # Get scripts directory and wire things up
 cd
-git clone https://github.com/adam-incuna/scripts.git
+git clone https://github.com/adam-thomas/scripts.git
 cd scripts/shell-config-backups
 cp .bash_aliases .zshrc .gitconfig .gitignore ~
 cp -f agnoster.zsh-theme ~/.oh-my-zsh/themes/agnoster.zsh-theme
@@ -63,12 +62,8 @@ zsh
 # Other things to do
 echo "Other things to set up:"
 echo "  Chrome"
-echo "  Hub at https://github.com/github/hub/releases"
-echo "  Meldium, AdBlock and GitHub Notifier extensions"
 echo "  Register an SSH key for GitHub at https://github.com/settings/ssh (instructions at https://help.github.com/articles/generating-ssh-keys/)"
 echo "  Change terminal font to Meslo Powerline so that agnoster renders properly"
 echo "  Setup Charlie's PSQL hack at http://meshy.co.uk/posts/postgresql-without-passwords/"
-echo "  Add SublimeText licence and extensions"
-echo "  PyCharm"
-echo "  Get ~/.pypirc config file from the internal wiki"
+echo "  Text editor/IDE"
 echo "  Reboot at least once"
