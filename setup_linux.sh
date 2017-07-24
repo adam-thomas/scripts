@@ -44,8 +44,8 @@ pip install --user powerline-status
 
 # Download git completion scripts and put them in the right place
 mkdir ~/.oh-my-zsh/custom/_git
-wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash ~/.oh-my-zsh/custom/_git/git-completion.bash
-wget https://github.com/git/git/raw/master/contrib/completion/git-completion.zsh ~/.oh-my-zsh/custom/_git/git-completion.zsh
+wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -O ~/.oh-my-zsh/custom/_git/git-completion.bash
+wget https://github.com/git/git/raw/master/contrib/completion/git-completion.zsh -O ~/.oh-my-zsh/custom/_git/git-completion.zsh
 
 # Get scripts directory and wire things up
 cd
