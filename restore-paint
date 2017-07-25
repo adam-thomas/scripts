@@ -1,8 +1,0 @@
-#!/bin/bash
-
-BACKUP_DIR="$HOME/dropbox/Game Design/Fists of Anarchy/Imperial Painter files"
-PAINTER_ROOT="$HOME/Projects/imperial-painter"
-
-cp -f $BACKUP_DIR/*.xlsx "$PAINTER_ROOT"
-cp -rf $BACKUP_DIR/painter/templates/custom "$PAINTER_ROOT/painter/templates"
-cp -f $BACKUP_DIR/painter/static/styles/custom.css "$PAINTER_ROOT/painter/static/styles/custom.css"
