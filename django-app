@@ -1,8 +1,7 @@
 #!/bin/bash
 
 ### django-app
-# Wraps `python manage.py startapp` and fiddles with its default content
-# to make it more appropriate for Incuna's workflow.
+# Wraps `python manage.py startapp` and fiddles with its default content.
 ### Usage:
 # django-app [app_name]
 
