@@ -23,15 +23,14 @@ create_branch() {
 }
 
 # Git
-alias git=hub
-alias g=hub
+alias g=git
 alias ga="g add"
 alias gaa="g aa"
 alias gc="g co"
 alias gcb="g cob"
 alias gcb+=create_branch
-alias gcvf="g commit -v"
-alias gcv="f8 && g commit -v"
+alias gcv="g commit -v"
+alias gcf="f8 && g commit -v"
 alias gca="f8 && g commit -av"
 alias gm="g checkout master"
 alias gmp="g co master; g pull"

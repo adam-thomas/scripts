@@ -89,7 +89,7 @@ autoload -U compinit
 compinit
 
 # zsh default user - hide the name display at the prompt
-DEFAULT_USER="athomas"
+DEFAULT_USER="adam"
 
 # hide the virtualenv name display
 VIRTUAL_ENV_DISABLE_PROMPT=1
@@ -143,6 +143,3 @@ export PATH=~/scripts:$PATH
 
 # Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-
-# rbenv
-eval "$(rbenv init -)"
