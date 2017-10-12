@@ -3,12 +3,12 @@ alias rlsh="source ~/.zshrc"
 alias rlzsh="source ~/.zshrc"
 alias rlbash="source ~/.bashrc"
 alias rlalias="source ~/.bash_aliases"
-alias esh="subl ~/.zshrc"
-alias ezsh="subl ~/.zshrc"
-alias ebash="subl ~/.bashrc"
-alias ealias="subl ~/.bash_aliases"
+alias esh="gedit ~/.zshrc"
+alias ezsh="gedit ~/.zshrc"
+alias ebash="gedit ~/.bashrc"
+alias ealias="gedit ~/.bash_aliases"
 alias csc="cd ~/scripts"
-alias scrpt="subl ~/scripts; ealias"
+alias scrpt="gedit ~/scripts; ealias"
 alias s=scrpt
 alias scrpt+="scrpt; csc"
 alias s+="scrpt; csc"
@@ -26,23 +26,26 @@ create_branch() {
 alias g=git
 alias ga="g add"
 alias gaa="g aa"
+alias gb="g branch"
 alias gc="g co"
 alias gcb="g cob"
 alias gcb+=create_branch
 alias gcv="g commit -v"
 alias gcf="f8 && g commit -v"
 alias gca="g commit -av"
+alias gf="g fetch"
 alias gm="g checkout master"
 alias gmp="g co master; g pull"
 alias gmg="g merge master"
 alias gp="g pull"
 alias gps="g push"
+alias gsp=gps
 alias gpr="g pull-request"
 alias gr="g reset"
 alias grh="g reset HEAD"
 alias gs="g ss"
-alias gsp="g stash pop"
 alias gst="g stash"
+alias gstp="g stash pop"
 
 # Heroku
 alias hr="heroku run"
@@ -58,11 +61,7 @@ alias dv="deactivate && cd ~/Projects"
 alias rmvenv="source venv-delete"
 alias sv="ve && pmserv+"
 
-# Django help
-alias mkuser="python manage.py shell < ~/scripts/make_superuser.py"
-
 # Other project management
-alias getvars="hoard get | sed 's/^/EXPORT /' > .env"
 alias dg=dumping-ground
 alias cdg="source change-to-dumping-ground"
 
@@ -118,7 +117,6 @@ alias mkm="make migrations"
 # Other usefuls
 alias sb="subl ."
 alias ack="ack-grep"
-alias ackp="ack-grep --type=python"
 alias nt="nautilus ."
 alias mount-dropbox="sudo mount -t vboxsf -o uid=1000,gid=1000 Dropbox ~/dropbox"
 alias mntdbx=mount-dropbox
