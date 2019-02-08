@@ -1,7 +1,3 @@
-[user]
-	email = adamthomas@e3d-online.com
-	name = Adam Thomas
-
 [core]
   editor = nano
   excludesfile = ~/.gitignore
