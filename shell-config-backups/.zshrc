@@ -53,13 +53,14 @@ fpath=(~ZSH_CUSTOM $fpath)
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(gitfast hub virtualenvwrapper)
+# plugins=(gitfast hub virtualenvwrapper)
+plugins=(gitfast hub)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/heroku/bin:/home/adam/scripts:/home/adam/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="/usr/local/heroku/bin:/home/adam/scripts:/home/adam/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/adam/.local/lib/python2.7/site-packages"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -126,6 +127,9 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+if [ -f ~/.local_aliases ]; then
+    . ~/.local_aliases
+fi
 
 
 
@@ -133,13 +137,10 @@ fi
 # My own stuff
 ############################################################################################################################################
 
-# Virtualenv things
-export WORKON_HOME=$HOME/Envs
-export PROJECT_HOME=$HOME/Projects
-source /usr/local/bin/virtualenvwrapper.sh
-
 # My scripts
 export PATH=~/scripts:$PATH
 
-# Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+# nvm setup for easy Node usage
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
