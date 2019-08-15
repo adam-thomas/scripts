@@ -3,15 +3,11 @@ alias rlsh="source ~/.zshrc"
 alias rlzsh="source ~/.zshrc"
 alias rlbash="source ~/.bashrc"
 alias rlalias="source ~/.bash_aliases"
-alias esh="gedit ~/.zshrc"
-alias ezsh="gedit ~/.zshrc"
-alias ebash="gedit ~/.bashrc"
-alias ealias="gedit ~/.bash_aliases"
+alias esh="nano ~/.zshrc"
+alias ezsh="nano ~/.zshrc"
+alias ebash="nano ~/.bashrc"
+alias ealias="nano ~/.bash_aliases"
 alias csc="cd ~/scripts"
-alias scrpt="gedit ~/scripts; ealias"
-alias s=scrpt
-alias scrpt+="scrpt; csc"
-alias s+="scrpt; csc"
 alias bsh=backup-shell
 
 create_branch() {
@@ -26,6 +22,7 @@ create_branch() {
 alias g=git
 alias ga="g add"
 alias gaa="g aa"
+alias gcam="g commit --amend"
 alias gb="g branch"
 alias gc="g co"
 alias gcb="g cob"
@@ -33,7 +30,9 @@ alias gcb+=create_branch
 alias gcv="g commit -v"
 alias gcf="f8 && g commit -v"
 alias gca="g commit -av"
+alias gcp="g cherry-pick"
 alias gf="g fetch"
+alias gl="g log"
 alias gm="g checkout master"
 alias gmp="g co master; g pull"
 alias gmg="g merge master"
@@ -46,6 +45,14 @@ alias grh="g reset HEAD"
 alias gs="g ss"
 alias gst="g stash"
 alias gstp="g stash pop"
+alias gsu="g submodule update"
+
+# NPM/Yarn
+alias ni="npm install"
+alias ns="npm start"
+alias y="yarn"
+alias ya="yarn add"
+alias ys="yarn start"
 
 # Heroku
 alias hr="heroku run"
@@ -60,6 +67,10 @@ alias ve="venv '${PWD##*/}'"
 alias dv="deactivate && cd ~/Projects"
 alias rmvenv="source venv-delete"
 alias sv="ve && pmserv+"
+
+# New style virtualenv help
+alias mkenv="python3 -m venv ."
+alias av="source bin/activate"
 
 # Other project management
 alias dg=dumping-ground
@@ -115,8 +126,8 @@ alias mm="make migrate"
 alias mkm="make migrations"
 
 # Other usefuls
-alias sb="subl ."
 alias ack="ack-grep"
 alias nt="nautilus ."
 alias mount-dropbox="sudo mount -t vboxsf -o uid=1000,gid=1000 Dropbox ~/dropbox"
 alias mntdbx=mount-dropbox
+alias chrm="chromium-browser --allow-file-access-from-files"
