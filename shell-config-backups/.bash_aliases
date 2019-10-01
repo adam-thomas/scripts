@@ -18,23 +18,31 @@ create_branch() {
     git stash pop;
 }
 
+clone_or_checkout() {
+    if git rev-parse --is-inside-work-tree &> /dev/null; then
+        git checkout $1;
+    else
+        git clone $1;
+    fi
+}
+
 # Git
 alias g=git
 alias ga="g add"
-alias gaa="g aa"
+alias gaa="g add -A"
 alias gcam="g commit --amend"
 alias gb="g branch"
-alias gc="g co"
-alias gcb="g cob"
+alias gc=clone_or_checkout
+alias gcb="g checkout -b"
 alias gcb+=create_branch
 alias gcv="g commit -v"
-alias gcf="f8 && g commit -v"
 alias gca="g commit -av"
 alias gcp="g cherry-pick"
+alias gd="g diff"
 alias gf="g fetch"
 alias gl="g log"
 alias gm="g checkout master"
-alias gmp="g co master; g pull"
+alias gmp="g checkout master; g pull"
 alias gmg="g merge master"
 alias gp="g pull"
 alias gps="g push"
@@ -42,7 +50,7 @@ alias gsp=gps
 alias gpr="g pull-request"
 alias gr="g reset"
 alias grh="g reset HEAD"
-alias gs="g ss"
+alias gs="g status -s"
 alias gst="g stash"
 alias gstp="g stash pop"
 alias gsu="g submodule update"
