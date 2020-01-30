@@ -18,23 +18,16 @@ create_branch() {
     git stash pop;
 }
 
-clone_or_checkout() {
-    if git rev-parse --is-inside-work-tree &> /dev/null; then
-        git checkout $1;
-    else
-        git clone $1;
-    fi
-}
-
 # Git
 alias g=git
 alias ga="g add"
 alias gaa="g add -A"
 alias gcam="g commit --amend"
 alias gb="g branch"
-alias gc=clone_or_checkout
+alias gc="g checkout"
 alias gcb="g checkout -b"
 alias gcb+=create_branch
+alias gcl="g clone"
 alias gcv="g commit -v"
 alias gca="g commit -av"
 alias gcp="g cherry-pick"
@@ -61,28 +54,23 @@ alias ns="npm start"
 alias y="yarn"
 alias ya="yarn add"
 alias ys="yarn start"
+alias yw="yarn watch"
 
 # Heroku
+alias h="heroku"
+alias hl="heroku logs -t"
 alias hr="heroku run"
 alias hrp="heroku run python manage.py"
 alias hrm="heroku run python manage.py migrate"
 alias hrs="heroku run python manage.py shell"
 alias hrsync="heroku run python manage.py syncdb"
+alias hps="git push heroku master"
 
 # Virtualenv help
-alias venv="source venv-launcher"
-alias ve="venv '${PWD##*/}'"
 alias dv="deactivate && cd ~/Projects"
-alias rmvenv="source venv-delete"
-alias sv="ve && pmserv+"
-
-# New style virtualenv help
 alias mkenv="python3 -m venv ."
+alias mkvenv=mkenv
 alias av="source bin/activate"
-
-# Other project management
-alias dg=dumping-ground
-alias cdg="source change-to-dumping-ground"
 
 # Python work
 alias py="python"
