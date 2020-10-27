@@ -65,6 +65,7 @@ alias hrm="heroku run python manage.py migrate"
 alias hrs="heroku run python manage.py shell"
 alias hrsync="heroku run python manage.py syncdb"
 alias hps="git push heroku master"
+alias hi="hrp integrator"
 
 # Virtualenv help
 alias dv="deactivate && cd ~/Projects"
@@ -117,7 +118,7 @@ refresh_db() {
 alias m="make"
 alias mt="make test"
 alias md="make deploy"
-alias mr="make runserver"
+alias mr="make run"
 alias mm="make migrate"
 alias mkm="make migrations"
 

@@ -32,7 +32,7 @@ fpath=(~ZSH_CUSTOM $fpath)
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to disable command auto-correction.
 # DISABLE_CORRECTION="true"
@@ -139,3 +139,8 @@ fi
 
 # My scripts
 export PATH=~/scripts:/snap/bin:$PATH
+
+# Terminal title
+function precmd() {
+  echo -en "\e]0;${PWD##*/}\a"
+}
